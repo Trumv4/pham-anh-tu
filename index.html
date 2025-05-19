@@ -4,18 +4,104 @@
 <head>
   <meta charset="UTF-8">
   <title>Phạm Anh Tú - Website Cá Nhân</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .rainbow-name {
+      font-size: 36px;
+      font-weight: bold;
+      animation: rainbowText 3s linear infinite;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    @keyframes rainbowText {
+      0% { color: red; }
+      20% { color: orange; }
+      40% { color: yellow; }
+      60% { color: green; }
+      80% { color: blue; }
+      100% { color: red; }
+    }
+
+    .copy-btn {
+      padding: 6px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #34d399, #38bdf8);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .avatar {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .led-text {
+      font-size: 40px;
+      font-weight: bold;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: led-glow 3s linear infinite;
+    }
+
+    @keyframes led-glow {
+      0%, 100% {
+        text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow;
+      }
+      50% {
+        text-shadow: 0 0 20px blue, 0 0 30px green, 0 0 40px violet;
+      }
+    }
+
+    a {
+      color: #38bdf8;
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif;text-align:center;background:#0f172a;color:white;padding:50px;">
-  <h1 style="color:#38bdf8;text-shadow:0 0 10px #0ff;">Phạm Anh Tú</h1>
-  <p><strong>STK:</strong> 30106078888 - Techcombank</p>
+<body>
+  <img src="https://i.ibb.co/5QNBSQr/avatar-pham-anh-tu.jpg" alt="Avatar" class="avatar">
+  <h1 class="rainbow-name">Phạm Anh Tú</h1>
+  <p><strong>STK:</strong> <span id="stk">30106078888 - Techcombank</span>
+    <button class="copy-btn" onclick="copySTK()">Sao chép</button></p>
+  <p style="color:#facc15; font-style: italic;">#Chỉ Bank Đúng STK Trên</p>
   <p><strong>SĐT:</strong> 0837497443 - 0965003865</p>
   <p><strong>Zalo:</strong> 0326615531</p>
-  <p><strong>Facebook:</strong> <a href="https://fb.com/thanhxuanngungoc" target="_blank" style="color: #93c5fd;">fb.com/thanhxuanngungoc</a></p>
+  <p><strong>Facebook:</strong> <a href="https://fb.com/thanhxuanngungoc" target="_blank">fb.com/thanhxuanngungoc</a></p>
   <p><strong>Telegram:</strong> @Trumv4</p>
   <p><strong>Dịch vụ:</strong> Bán account, Proxy private, dịch vụ Game</p>
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/03/15/audio_d9704e433c.mp3?filename=summer-lofi-145276.mp3" type="audio/mpeg">
-  </audio>
-  <footer style="margin-top:40px;font-size:18px;color:#38bdf8;">Design by Tú</footer>
+  <p><strong>Check uy tín (Tổng cọc 3M):</strong><br>
+    <a href="https://www.facebook.com/share/p/1Xjxxns5o6/" target="_blank">Link 1</a> |
+    <a href="https://www.facebook.com/share/p/15yccTRcJr/" target="_blank">Link 2</a>
+  </p>
+  <p class="led-text">Design by Tú</p>
+
+  <div style="margin-top:30px">
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/Njj_bCrIvk8?autoplay=1&loop=1&playlist=Njj_bCrIvk8" 
+      frameborder="0" allow="autoplay" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function copySTK() {
+      const stk = document.getElementById("stk").innerText;
+      navigator.clipboard.writeText(stk).then(function() {
+        alert("✅ Đã sao chép STK: " + stk);
+      }, function(err) {
+        alert("❌ Không thể sao chép!");
+      });
+    }
+  </script>
 </body>
 </html>
